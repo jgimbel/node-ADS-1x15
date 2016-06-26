@@ -1,0 +1,23 @@
+{
+  "name": "ads_1x15",
+  "version": "1.0.0",
+  "description": "ADS1x15 Analog to Digitial i2c board",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"NOPES!\""
+  },
+  "keywords": [
+    "ADS1x15",
+    "ADS1115",
+    "ADS1015",
+    "adafruit",
+    "analog",
+    "digital"
+  ],
+  "author": "Joel <jgimbel@live.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
