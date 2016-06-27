@@ -46,12 +46,13 @@ var DEFAULT_ADDRESS = 0x48,
 },
     COMP_WINDOW = 0x0010,
     COMP_ACTIVE_HIGH = 0x0008,
-    COMP_LATCHING = 0x0004;
-COMP_QUE = {
+    COMP_LATCHING = 0x0004,
+    COMP_QUE = {
   1: 0x0000,
   2: 0x0001,
   4: 0x0002
-}, COMP_QUE_DISABLE = 0x0003;
+},
+    COMP_QUE_DISABLE = 0x0003;
 
 var i2c = require('i2c');
 
