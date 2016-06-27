@@ -4,6 +4,7 @@
   "description": "ADS1x15 Analog to Digitial i2c board",
   "main": "dist/index.js",
   "scripts": {
+    "start": "babel lib --out-dir dist",
     "test": "echo \"NOPES!\""
   },
   "keywords": [
