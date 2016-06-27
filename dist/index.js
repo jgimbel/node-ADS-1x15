@@ -60,7 +60,7 @@ var ADS1x15 = function () {
   function ADS1x15() {
     _classCallCheck(this, ADS1x15);
 
-    this._device = new i2c(arguments);
+    this._device = new (Function.prototype.bind.apply(i2c, [null].concat(Array.prototype.slice.call(arguments))))();
   }
 
   _createClass(ADS1x15, [{
@@ -90,7 +90,7 @@ var ADS1x15 = function () {
         var config = CONFIG_OS_SINGLE;
         config |= mux * 0x07 << MUX_OFFSET;
 
-        if (!gain in CONFIG_GAIN) return cb(new Error('Gain must be one of: "2/3", 1, 2, 4, 8, 16'));
+        if (!gain in GAIN) return cb(new Error('Gain must be one of: "2/3", 1, 2, 4, 8, 16'));
         config |= GAIN[gain];
 
         config |= mode;
@@ -276,7 +276,7 @@ var ADS1115 = function (_ADS1x) {
   function ADS1115() {
     _classCallCheck(this, ADS1115);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ADS1115).call(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(ADS1115).apply(this, arguments));
   }
 
   _createClass(ADS1115, [{
@@ -307,7 +307,7 @@ var ADS1015 = function (_ADS1x2) {
   function ADS1015() {
     _classCallCheck(this, ADS1015);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ADS1015).call(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(ADS1015).apply(this, arguments));
   }
 
   _createClass(ADS1015, [{
