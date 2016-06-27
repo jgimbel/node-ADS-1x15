@@ -45,7 +45,7 @@ COMP_QUE = {
 
 const i2c = require('i2c');
 
-module.exports.ADS1x15 = class ADS1x15 {
+class ADS1x15 {
   constructor() {
     this._device = new i2c(arguments);
   }
@@ -219,8 +219,8 @@ module.exports.ADS1x15 = class ADS1x15 {
       return cb(null, this._conversion_value(result[1], result[0]));
     });
   }
-};
-module.exports.ADS1115 = class ADS1115 extends ADS1x15 {
+}
+class ADS1115 extends ADS1x15 {
   constructor() {
     super(arguments);
   }
@@ -238,9 +238,9 @@ module.exports.ADS1115 = class ADS1115 extends ADS1x15 {
     value = (high & 0xFF) << 8 | low & 0xFF;
     return value & 0x8000 !== 0 ? value - (1 << 16) : value;
   }
-};
+}
 
-module.exports.ADS1015 = class ADS1015 extends ADS1x15 {
+class ADS1015 extends ADS1x15 {
   constructor() {
     super(arguments);
   }
@@ -258,4 +258,10 @@ module.exports.ADS1015 = class ADS1015 extends ADS1x15 {
     value = (high & 0xFF) << 4 | (low & 0xFF) >> 4;
     return value & 0x8000 !== 0 ? value - (1 << 12) : value;
   }
+}
+
+module.exports = {
+  ADS1015,
+  ADS1115,
+  ADS1x15
 };
